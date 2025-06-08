@@ -1,0 +1,31 @@
+<h1 class="display-6 pt-3 text-center">{{ livroId ? 'Editar' : 'Cadastrar' }}</h1>
+<hr class="pb-3">
+
+<div class="container">
+    <form [formGroup]="livroForm" (ngSubmit)="cadastrarOuEditar()">
+        <div class="row">
+            <div class="col-6">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" formControlName="titulo">
+            </div>
+            </div>
+            <div class="col-3">
+            <div class="mb-3">
+                <label for="quantidade" class="form-label">Quantidade</label>
+                <input type="number" min="0" class="form-control" id="quantidade" formControlName="quantidade">
+            </div>
+            </div>
+            <div class="col-3">
+            <div class="mb-3">
+                <label for="ano" class="form-label">Ano</label>
+                <input type="text" class="form-control" id="Ano" formControlName="ano">
+            </div>
+            </div>
+        </div>
+
+        <button type="button" routerLink="/livros" class="btn btn-success me-2"><i class="fa-solid fa-angles-left"></i> voltar</button>
+        <button type="submit" [disabled]="livroForm.invalid" class="btn btn-warning"><i class="fa-solid fa-bookmark"></i> Salvar</button>
+    </form>
+
+</div>
